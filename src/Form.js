@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { fetchReservations, addReservation } from './apiCalls';
 import './Form.css';
 
 class Form extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name: '',
+      resName: '',
       date: '',
       time: '',
       number: ''
@@ -16,14 +17,29 @@ class Form extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  makeReservation = async (event) => {
+    event.preventDefault();
+    const reservation = {
+      id: Date.now(),
+      name: this.state.resName,
+      date: this.state.date,
+      time: this.state.time,
+      number: this.state.number
+    };
+    await addReservation(reservation);
+    // const reservations = await fetchReservations();
+  }
+
   render() {
-    
+
+    const { resName, date, time, number } = this.state;
+
     return (
       <form className="reservation-card">
         <input type='text'
               placeholder='Name'
               name='name'
-              value={name}
+              value={resName}
               onChange={this.updateForm}>
         </input>
         <input type='text'
@@ -44,11 +60,11 @@ class Form extends Component {
               value={number}
               onChange={this.updateForm}>
         </input>
-        <button>Make Reservation</button>
+        <button onClick={this.makeReservation}>Make Reservation</button>
       </form>
     )
   }
 
 }
 
-export default Reservation;
+export default Form;

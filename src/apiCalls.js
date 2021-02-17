@@ -23,11 +23,11 @@ export const fetchReservations = () => {
   }
 
   export const cancelReservation = (reservationID) => {
-    const delete = {
+    const deleteRequest = {
         method: 'DELETE',
         headers: {'Content-Type': 'application/json'},
       }
-    return fetch(`http://localhost:3001/api/v1/reservations/${reservationID}`, delete)
+    return fetch(`http://localhost:3001/api/v1/reservations/${reservationID}`, deleteRequest)
       .then(res => {if (!res.ok) {
           return `${res.status} error. Sorry! Something went wrong! Try again later or go to Contact Us to contact the developers with questions!`;
         } else {
