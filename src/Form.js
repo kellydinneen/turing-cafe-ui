@@ -67,7 +67,7 @@ class Form extends Component {
               value={number}
               onChange={this.updateForm}>
         </input>
-        <button onClick={this.makeReservation}>Make Reservation</button>
+        <button className='submit-button' onClick={this.makeReservation}>Make Reservation</button>
       </form>
     )
   }

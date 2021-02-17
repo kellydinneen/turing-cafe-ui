@@ -3,8 +3,17 @@
   margin-bottom: 5vh;
 }
 
+.submit-button {
+  background-color: #008080;
+  color: #ffff;
+  height: 5vh;
+  border-radius: 10%;
+  margin-left: 2vw;
+}
+
 input {
   margin: 1vh;
   border: solid 2px #008080;
   border-radius: 10%;
+  height: 4vh;
 }

@@ -22,7 +22,7 @@ export const fetchReservations = () => {
         }})
   }
 
-  export const cancelReservation = (reservationID) => {
+  export const deleteReservation = (reservationID) => {
     const deleteRequest = {
         method: 'DELETE',
         headers: {'Content-Type': 'application/json'},

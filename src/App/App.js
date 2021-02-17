@@ -40,6 +40,7 @@ componentDidMount() {
         <Reservation
           reservation={reservation}
           key={reservation.id}
+          updateReservations={this.updateReservations}
         />
       )
     })
