@@ -6,10 +6,10 @@ class Form extends Component {
   constructor(props){
     super(props)
     this.state = {
-      resName: '',
       date: '',
       time: '',
-      number: ''
+      number: '',
+      personName: ''
     }
   }
 
@@ -21,7 +21,7 @@ class Form extends Component {
     event.preventDefault();
     const reservation = {
       id: Date.now(),
-      name: this.state.resName,
+      name: this.state.personName,
       date: this.state.date,
       time: this.state.time,
       number: this.state.number
@@ -32,14 +32,14 @@ class Form extends Component {
 
   render() {
 
-    const { resName, date, time, number } = this.state;
+    const { date, time, number, personName } = this.state;
 
     return (
       <form className="reservation-card">
         <input type='text'
-              placeholder='Name'
-              name='name'
-              value={resName}
+              placeholder='Your Name'
+              name='personName'
+              value={personName}
               onChange={this.updateForm}>
         </input>
         <input type='text'
