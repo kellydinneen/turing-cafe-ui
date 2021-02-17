@@ -43,6 +43,21 @@ describe('Make Reservation UI', () => {
     cy.visit('http://localhost:3000');
   });
 
+  it('should be able to fill out form inputs', () => {
+    cy.get('input[name="personName"]')
+      .type("Test Name")
+      .should('have.value', 'Test Name')
+      .get('input[name="date"]')
+      .type("2/17")
+      .should('have.value', '2/17')
+      .get('input[name="time"]')
+      .type("1:00")
+      .should('have.value', '1:00')
+      .get('input[name="number"]')
+      .type('1')
+      .should('have.value', '1')
+  })
+
   it('should be able to fill out the form and click Make Reservation, adding a reservation to the page', () => {
      cy.intercept({
          method: 'POST',
