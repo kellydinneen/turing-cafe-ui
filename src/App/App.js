@@ -14,6 +14,10 @@ class App extends Component {
   }
 }
 
+updateReservations = (updatedReservations) => {
+  this.setState({reservations: updatedReservations});
+}
+
 componentDidMount() {
     fetchReservations()
         .then(result =>{
@@ -44,7 +48,9 @@ componentDidMount() {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form/>
+          <Form
+            updateReservations={this.updateReservations}
+          />
         </div>
         <div className='resy-container'>
          {allReservations}

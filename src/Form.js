@@ -27,7 +27,14 @@ class Form extends Component {
       number: this.state.number
     };
     await addReservation(reservation);
-    // const reservations = await fetchReservations();
+    this.setState({
+      date: '',
+      time: '',
+      number: '',
+      personName: ''
+    });
+    const reservations = await fetchReservations();
+    this.props.updateReservations(reservations);
   }
 
   render() {
