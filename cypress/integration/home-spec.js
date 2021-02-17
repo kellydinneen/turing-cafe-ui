@@ -37,3 +37,30 @@ describe('Home UI', () => {
       .next().contains('2 guests')
   });
 });
+
+describe('Make Reservation UI', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000');
+  });
+
+  it('should be able to fill out the form and click Make Reservation, adding a reservation to the page', () => {
+     cy.intercept({
+         method: 'POST',
+         url: 'hhttp://localhost:3001/api/v1/reservations'
+       },
+       {
+         statusCode: 201,
+         body: {"id":100,"name":"Tester","date":"2/17","time":"1:00","number":1}
+       })
+       .get('input[name="personName"]')
+       .type("Tester")
+       .get('input[name="date"]')
+       .type("2/17")
+       .get('input[name="time"]')
+       .type("1:00")
+       .get('input[name="number"]')
+       .type('1')
+       .get('.submit-button').click().wait(1000)
+      cy.get('.resy-container').children().last().children().first().contains('Tester')
+   });
+  });
