@@ -11,7 +11,7 @@ const Reservation = (props) => {
       <h3>{date}</h3>
       <h3>{time}</h3>
       <h3>{number} guests</h3>
-      <button>Cancel</button>
+      <button className="cancel-button">Cancel</button>
     </div>
   )
 }

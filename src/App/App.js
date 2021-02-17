@@ -47,11 +47,9 @@ componentDidMount() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-          <Form
-            updateReservations={this.updateReservations}
-          />
-        </div>
+        <Form
+          updateReservations={this.updateReservations}
+        />
         <div className='resy-container'>
          {allReservations}
         </div>

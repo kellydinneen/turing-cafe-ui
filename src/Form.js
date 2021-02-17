@@ -42,7 +42,7 @@ class Form extends Component {
     const { date, time, number, personName } = this.state;
 
     return (
-      <form className="reservation-card">
+      <form className="reservation-form">
         <input type='text'
               placeholder='Your Name'
               name='personName'
@@ -56,7 +56,7 @@ class Form extends Component {
               onChange={this.updateForm}>
         </input>
         <input type='text'
-              placeholder='Time (hh:mm am/pm)'
+              placeholder='Time (hh:mm)'
               name='time'
               value={time}
               onChange={this.updateForm}>

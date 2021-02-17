@@ -1,7 +1,15 @@
 .reservation-card {
   width: 20vw;
   background-color: #ffff;
-  border: solid 2px #000000;
+  border: solid 5px #008080;
+  border-radius: 5%;
   margin: 3vw;
   padding: 1vh;
+  color: #008080;
+}
+
+.cancel-button {
+  background-color: #008080;
+  width: 10vw;
+  color: #ffff;
 }

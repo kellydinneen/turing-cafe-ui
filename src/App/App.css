@@ -22,5 +22,11 @@
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
+  height: 70vh;
   margin-right: 0;
+  overflow: scroll;
+}
+
+.resy-form {
+  width: 100vw;
 }

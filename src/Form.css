@@ -1,0 +1,10 @@
+.reservation-form {
+  width: 100vw;
+  margin-bottom: 5vh;
+}
+
+input {
+  margin: 1vh;
+  border: solid 2px #008080;
+  border-radius: 10%;
+}
