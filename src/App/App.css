@@ -21,4 +21,6 @@
 .resy-container {
   display: flex;
   flex-wrap: wrap;
+  width: 100vw;
+  margin-right: 0;
 }
