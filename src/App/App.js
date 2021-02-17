@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchReservations } from '../apiCalls';
 import Reservation from '../Reservation';
 import Form from '../Form';
+import Menu from '../Menu';
 import './App.css';
 
 class App extends Component {
@@ -11,11 +12,20 @@ class App extends Component {
     reservations: [],
     isLoading: true,
     errorMsg: null,
+    showMenu: false
   }
 }
 
 updateReservations = (updatedReservations) => {
   this.setState({reservations: updatedReservations});
+}
+
+revealMenu = () => {
+  this.setState({showMenu: true});
+}
+
+hideMenu = () => {
+  this.setState({showMenu: false});
 }
 
 componentDidMount() {
@@ -48,12 +58,21 @@ componentDidMount() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <Form
-          updateReservations={this.updateReservations}
-        />
-        <div className='resy-container'>
-         {allReservations}
-        </div>
+        <button onClick={this.revealMenu}>Menu</button>
+        <button onClick={this.hideMenu}>Home</button>
+        {!this.state.showMenu &&
+          <>
+            <Form
+              updateReservations={this.updateReservations}
+            />
+            <div className='resy-container'>
+             {allReservations}
+            </div>
+          </>
+        }
+        {this.state.showMenu &&
+          <Menu/>
+        }
       </div>
     )
   }
