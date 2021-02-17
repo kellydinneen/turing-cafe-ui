@@ -8,8 +8,8 @@ export const fetchReservations = () => {
       }})
   }
 
-  export const fetchMenu = () => {
-    return fetch(`http://localhost:3001/api/v1/menu`)
+  export const fetchMenu = (type) => {
+    return fetch(`http://localhost:3001/api/v1/menu/${type}`)
     .then(res => {
       if (!res.ok) {
           return `${res.status} error. Sorry! Something went wrong! Try again later.`

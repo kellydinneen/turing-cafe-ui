@@ -14,7 +14,7 @@ class Menu extends Component {
   }
 
   componentDidMount() {
-      fetchMenu()
+      fetchMenu('drinks')
           .then(result =>{
             if (typeof(result) !== 'object') {
               this.setState({
@@ -22,12 +22,26 @@ class Menu extends Component {
                 errorMsg: result
               })
             } else {
+              console.log(result);
               this.setState({
-                  drinks: result.drinks,
-                  food: result.food,
+                  drinks: result,
                   isLoading: false
                 })
             }})
+            fetchMenu('food')
+                .then(result =>{
+                  if (typeof(result) !== 'object') {
+                    this.setState({
+                      isLoading: false,
+                      errorMsg: result
+                    })
+                  } else {
+                    console.log(result);
+                    this.setState({
+                        food: result,
+                        isLoading: false
+                      })
+                  }})
     }
 
   render() {
