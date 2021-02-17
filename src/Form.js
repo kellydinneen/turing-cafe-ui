@@ -43,25 +43,33 @@ class Form extends Component {
 
     return (
       <form className="reservation-form">
-        <input type='text'
+        <input
+              className="name-input"
+              type='text'
               placeholder='Your Name'
               name='personName'
               value={personName}
               onChange={this.updateForm}>
         </input>
-        <input type='text'
+        <input
+              className="date-input"
+              type='text'
               placeholder='Date (mm/dd)'
               name='date'
               value={date}
               onChange={this.updateForm}>
         </input>
-        <input type='text'
+        <input
+              className="time-input"
+              type='text'
               placeholder='Time (hh:mm)'
               name='time'
               value={time}
               onChange={this.updateForm}>
         </input>
-        <input type='text'
+        <input
+              className="number-input"
+              type='text'
               placeholder='Number of guests'
               name='number'
               value={number}
