@@ -3,15 +3,16 @@ import React from 'react';
 
 const Reservation = (props) => {
 
-  const {movie, user} = props;
+  const {name, date, time, number} = props.reservation;
 
   return (
-    <Link to={{
-        pathname:`/movie-details/${movie.title.replace(/\s+/g, '')}`,
-        state: {movie, user}
-      }}>
-      <img src={movie.poster_path} alt={movie.title} className={`poster ${movie.id}`} onClick={() => props.leaveHome()}/>
-    </Link>
+    <div className="reservation-card">
+      <h3>{name}</h3>
+      <h3>{date}</h3>
+      <h3>{time}</h3>
+      <h3>{number} guests</h3>
+      <button>Cancel</button>
+    </div>
   )
 }
 
